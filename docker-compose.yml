@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: vvs_user
+      POSTGRES_PASSWORD: change_this_password
+      POSTGRES_DB: vvs_rewards
+    ports:
+      - "5432:5432"
+    volumes:
+      - vvs_pgdata:/var/lib/postgresql/data
+volumes:
+  vvs_pgdata:
